@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER-ZONE | Next-Gen Gaming Arena</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. NAVBAR -->
+    <header class="navbar">
+        <div class="logo">CYBER<span>ZONE</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#zones">Zones</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+        </ul>
+        <button class="btn-glow" onclick="openBooking('General Slot')">Book Slot</button>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="glitch-text">DOMINATE THE ARENA</h1>
+            <p>RTX 4090 Rigs | 240Hz OLED Displays | Ultra-Low Latency Ping</p>
+            <div class="hero-btns">
+                <button class="btn-main" onclick="openBooking('VIP Rig')">Claim VIP Station</button>
+                <a href="#zones" class="btn-outline">Explore Zones</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. GAMING ZONES (CARDS) -->
+    <section id="zones" class="container">
+        <h2 class="section-title">CHOOSE YOUR <span>BATTLEGROUND</span></h2>
+        
+        <div class="card-grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-badge">POPULAR</div>
+                <h3>VIP PC ARENA</h3>
+                <p>Core i9 14th Gen + RTX 4090 | 32GB DDR5 | Secretlab Chairs</p>
+                <span class="price">₹120 / hr</span>
+                <button class="card-btn" onclick="openBooking('VIP PC Arena')">Book Now</button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card neon-magenta">
+                <div class="card-badge">PRO STREAM</div>
+                <h3>STREAMER SUITE</h3>
+                <p>Dual PC Setup + DSLR Camera + Shure SM7B Mic + Green Screen</p>
+                <span class="price">₹200 / hr</span>
+                <button class="card-btn" onclick="openBooking('Streamer Suite')">Book Now</button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-badge">CONSOLE</div>
+                <h3>PS5 & VR LOUNGE</h3>
+                <p>PlayStation 5 + 65" 4K OLED TV + DualSense Edge + PS VR2</p>
+                <span class="price">₹150 / hr</span>
+                <button class="card-btn" onclick="openBooking('PS5 Lounge')">Book Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SIMPLE BOOKING MODAL (POP-UP) -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeBooking()">&times;</span>
+            <h2>BOOK YOUR <span id="selectedZone">SLOT</span></h2>
+            <form onsubmit="confirmBooking(event)">
+                <input type="text" placeholder="Your Gamer Tag / Name" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select>
+                    <option>1 Hour Session</option>
+                    <option>3 Hours Pass (10% OFF)</option>
+                    <option>All Night Pass (10 PM - 6 AM)</option>
+                </select>
+                <button type="submit" class="btn-main full-width">CONFIRM RESERVATION</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 5. FOOTER -->
+    <footer>
+        <p>&copy; 2026 CYBERZONE GAMING CAFE. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

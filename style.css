@@ -1,0 +1,273 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #080b12;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* 1. Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 8%;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #00f3ff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #00f3ff;
+    text-shadow: 0 0 10px #00f3ff;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00f3ff;
+    text-shadow: 0 0 8px #00f3ff;
+}
+
+/* 2. Hero Section & Float Animation */
+.hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle, rgba(0, 243, 255, 0.1) 0%, rgba(8, 11, 18, 1) 70%);
+    padding: 0 20px;
+}
+
+.glitch-text {
+    font-size: clamp(2rem, 6vw, 4rem);
+    color: #ffffff;
+    text-shadow: 0 0 20px #00f3ff;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+
+.hero p {
+    color: #94a3b8;
+    margin: 15px 0 30px;
+    font-size: 1.1rem;
+}
+
+/* Buttons */
+.btn-main, .btn-glow {
+    background: #00f3ff;
+    color: #000;
+    border: none;
+    padding: 12px 28px;
+    font-weight: 800;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 0 15px #00f3ff;
+    transition: 0.3s ease;
+}
+
+.btn-main:hover, .btn-glow:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00f3ff;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 12px 28px;
+    color: #ff0055;
+    border: 2px solid #ff0055;
+    text-decoration: none;
+    font-weight: 800;
+    margin-left: 15px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: #ff0055;
+    color: #fff;
+    box-shadow: 0 0 20px #ff0055;
+}
+
+/* 3. Gaming Cards Section */
+.container {
+    padding: 80px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: #ff0055;
+    text-shadow: 0 0 10px #ff0055;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #0f172a;
+    border: 1px solid #00f3ff;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    transition: 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(0, 243, 255, 0.4);
+}
+
+.card.neon-magenta {
+    border-color: #ff0055;
+}
+
+.card.neon-magenta:hover {
+    box-shadow: 0 0 25px rgba(255, 0, 85, 0.4);
+}
+
+.card-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00f3ff;
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 900;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.card h3 {
+    margin: 15px 0 10px;
+    color: #fff;
+}
+
+.card p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.price {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00f3ff;
+    margin: 20px 0;
+}
+
+.card-btn {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #00f3ff;
+    color: #00f3ff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card-btn:hover {
+    background: #00f3ff;
+    color: #000;
+}
+
+/* 4. Booking Modal (Pop-up) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #0f172a;
+    border: 2px solid #00f3ff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 30px #00f3ff;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.8rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal form input, .modal form select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: white;
+    border-radius: 4px;
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #05070c;
+    color: #64748b;
+    font-size: 0.85rem;
+    border-top: 1px solid #1e293b;
+}
